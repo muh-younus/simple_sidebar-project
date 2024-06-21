@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseMove event</title>
+
+    <style>
+
+        
+
+        body{
+
+            background-color: black;
+            
+        }
+
+        cont{
+
+            width: 10px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+            clip-path: ellipse(2% 40% at 50% 50%);
+
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+
+        var body = document.body;
+
+        window.addEventListener(("mousemove"),(e) =>{
+
+            let bubble = document.createElement('cont');
+
+            body.appendChild(bubble);
+            
+           let x_axis = e.clientX;
+           let y_axis = e.clientY;
+
+           bubble.style.left =`${x_axis}px`;
+           bubble.style.top =`${y_axis}px`;
+
+           setTimeout(() =>{
+
+            body.removeChild(bubble);
+
+
+           },200);
+          
+
+        });
+    </script>
+    
+</body>
+</html>
